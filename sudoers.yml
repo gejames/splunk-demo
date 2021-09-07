@@ -4,7 +4,11 @@
   become: yes
 
   tasks:
-  
+
+    - name: wait for 20 seconds
+      wait_for:
+        timeout: 20
+
     - name: copy original sudoers to rhel vms
       copy: 
         src: ./files/sudoers
